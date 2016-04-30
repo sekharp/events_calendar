@@ -3,7 +3,7 @@ require 'csv'
 desc 'Import events from CSV file'
 task :import => [:environment] do
 
-  books = "lib/data/test_events.csv"
+  events = "lib/data/test_events.csv"
 
   CSV.foreach(events, :headers => true) do |row|
     event = Event.create!(row.to_hash)
