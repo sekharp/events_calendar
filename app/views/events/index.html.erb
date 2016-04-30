@@ -11,7 +11,7 @@
   <tbody>
     <% @starts.each do |start| %>
       <tr>
-        <th><%= start %></th>
+        <th><%= start.strftime("%m/%d/%Y %H:%M") %></th>
       </tr>
     <% end %>
   </tbody>
