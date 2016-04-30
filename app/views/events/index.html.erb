@@ -12,11 +12,11 @@
     <% @starts.each do |start| %>
       <tr>
         <th><%= start.strftime("%m/%d/%Y %H:%M") %></th>
-        <td><%= Event.find_by(start: start, track: "Track 1 - Pattern Recognition").name if Event.find_by(start: start, track: "Track 1 - Pattern Recognition") %><%= Event.find_by(start: start, track: ["Lunch", "Keynote", "Coffee Breaks", "Party"]).name if Event.find_by(start: start, track: ["Lunch", "Keynote", "Coffee Breaks", "Party"]) %></td>
-        <td><%= Event.find_by(start: start, track: "Track 2 - Image, Speech, and Signal Processing").name if Event.find_by(start: start, track: "Track 2 - Image, Speech, and Signal Processing") %><%= Event.find_by(start: start, track: ["Lunch", "Keynote", "Coffee Breaks", "Party"]).name if Event.find_by(start: start, track: ["Lunch", "Keynote", "Coffee Breaks", "Party"]) %></td>
-        <td><%= Event.find_by(start: start, track: "Track 3 - Document Analysis").name if Event.find_by(start: start, track: "Track 3 - Document Analysis") %><%= Event.find_by(start: start, track: ["Lunch", "Keynote", "Coffee Breaks", "Party"]).name if Event.find_by(start: start, track: ["Lunch", "Keynote", "Coffee Breaks", "Party"]) %></td>
-        <td><%= Event.find_by(start: start, track: "Track 4 - Biometrics").name if Event.find_by(start: start, track: "Track 4 - Biometrics") %><%= Event.find_by(start: start, track: ["Lunch", "Keynote", "Coffee Breaks", "Party"]).name if Event.find_by(start: start, track: ["Lunch", "Keynote", "Coffee Breaks", "Party"]) %></td>
-        <td><%= Event.find_by(start: start, track: "Track 5 - Bioinformatics").name if Event.find_by(start: start, track: "Track 5 - Bioinformatics") %><%= Event.find_by(start: start, track: ["Lunch", "Keynote", "Coffee Breaks", "Party"]).name if Event.find_by(start: start, track: ["Lunch", "Keynote", "Coffee Breaks", "Party"]) %></td>
+        <td><%= Event.format_track(start, @tracks[0]) %></td>
+        <td><%= Event.format_track(start, @tracks[1]) %></td>
+        <td><%= Event.format_track(start, @tracks[2]) %></td>
+        <td><%= Event.format_track(start, @tracks[3]) %></td>
+        <td><%= Event.format_track(start, @tracks[4]) %></td>
       </tr>
     <% end %>
   </tbody>
