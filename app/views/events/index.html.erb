@@ -9,14 +9,14 @@
     </tr>
   </thead>
   <tbody>
-    <% @starts.each do |start| %>
+    <% @times.each do |time| %>
       <tr>
-        <th><%= start.strftime("%m/%d/%Y %H:%M") %></th>
-        <td><%= Event.format_track(start, @tracks[0]) %></td>
-        <td><%= Event.format_track(start, @tracks[1]) %></td>
-        <td><%= Event.format_track(start, @tracks[2]) %></td>
-        <td><%= Event.format_track(start, @tracks[3]) %></td>
-        <td><%= Event.format_track(start, @tracks[4]) %></td>
+        <th><%= time[0].strftime("%m/%d/%Y %H:%M") %> to <%= time[1].strftime("%m/%d/%Y %H:%M") %></th>
+        <td><%= Event.format_track(time[0], time[1], @tracks[0]) %></td>
+        <td><%= Event.format_track(time[0], time[1], @tracks[1]) %></td>
+        <td><%= Event.format_track(time[0], time[1], @tracks[2]) %></td>
+        <td><%= Event.format_track(time[0], time[1], @tracks[3]) %></td>
+        <td><%= Event.format_track(time[0], time[1], @tracks[4]) %></td>
       </tr>
     <% end %>
   </tbody>
