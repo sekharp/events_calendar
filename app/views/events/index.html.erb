@@ -12,6 +12,11 @@
     <% @starts.each do |start| %>
       <tr>
         <th><%= start.strftime("%m/%d/%Y %H:%M") %></th>
+        <td><%= Event.find_by(start: start, track: "Track 1 - Pattern Recognition").name if Event.find_by(start: start, track: "Track 1 - Pattern Recognition") %></td>
+        <td><%= Event.find_by(start: start, track: "Track 2 - Image, Speech, and Signal Processing").name if Event.find_by(start: start, track: "Track 2 - Image, Speech, and Signal Processing") %></td>
+        <td><%= Event.find_by(start: start, track: "Track 3 - Document Analysis").name if Event.find_by(start: start, track: "Track 3 - Document Analysis") %></td>
+        <td><%= Event.find_by(start: start, track: "Track 4 - Biometrics").name if Event.find_by(start: start, track: "Track 4 - Biometrics") %></td>
+        <td><%= Event.find_by(start: start, track: "Track 5 - Bioinformatics").name if Event.find_by(start: start, track: "Track 5 - Bioinformatics") %></td>
       </tr>
     <% end %>
   </tbody>
