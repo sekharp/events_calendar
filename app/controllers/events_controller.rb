@@ -7,7 +7,7 @@ class EventsController < ApplicationController
     month = params["id"][0..1]
     day = params["id"][3..4]
     real_date = day + "/" + month + "/" + params["id"][6..9]
-    t = Time.parse(real_date)
+    t = Date.parse(real_date)
     @events = Event.where(start: t..(t+1.day)).order("start ASC")
     @event = Event
     @tracks = Event.uniq.pluck(:track).sort.select { |t| t[0] == "T" }
