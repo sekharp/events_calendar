@@ -1,0 +1,21 @@
+<table border="1" style="width:100%">
+  <caption>Events</caption>
+  <thead>
+    <tr>
+      <th></th>
+      <% @tracks.each do |track| %>
+        <th><%= track %></th>
+      <% end %>
+    </tr>
+  </thead>
+  <tbody>
+    <% @times.each do |time| %>
+      <tr>
+        <th><%= time[0].strftime("%m/%d/%Y %H:%M") %> to <%= time[1].strftime("%m/%d/%Y %H:%M") %></th>
+        <% 5.times do |track_num| %>
+          <td><%= @event.format_track(time[0], time[1], @tracks[track_num]) %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
